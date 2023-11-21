@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "compile": "tsc main.ts && node formatFile.js dist/index.html",
+    "compile": "tsc main.ts && tsc preload.js && node formatFile.js dist/index.html",
     "electron:dev": "cross-env BROWSER=none npm run build && npm run compile && electron .",
     "electron:build": "npm run build && npm run compile && electron-builder",
     "electron:dist": "npm run build && npm run compile && electron-builder --mac --dir"
