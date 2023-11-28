@@ -17,7 +17,7 @@ class System
 
 	void setGpu ()
 	{
-		this->cpu = system("")
+		this->cpu = system("");
 	}
 
 	std::string getCpu ()
