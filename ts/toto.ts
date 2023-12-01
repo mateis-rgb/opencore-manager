@@ -1,5 +1,5 @@
-const plist = require ("plist");
-const fs = require ("fs");
+const plist = require("plist");
+const fs = require("fs");
 
 const plistFile = fs.readFileSync("./config.plist", { encoding: "utf8" });
 const parsed = plist.parse(plistFile);
