@@ -1,0 +1,1619 @@
+{
+	"ACPI": {
+		"Add": [
+			{
+				"Comment": "My custom DSDT",
+				"Enabled": false,
+				"Path": "DSDT.aml"
+			},
+			{
+				"Comment": "My custom SSDT",
+				"Enabled": false,
+				"Path": "SSDT-1.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-ALS0.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-AWAC-DISABLE.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-BRG0.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-EC-USBX.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-EC.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-EHCx-DISABLE.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-IMEI.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-PLUG.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-PMC.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-PNLF.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-RTC0-RANGE.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-RTC0.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-SBUS-MCHC.aml"
+			},
+			{
+				"Comment": "Read the comment in dsl sample",
+				"Enabled": false,
+				"Path": "SSDT-UNC.aml"
+			}
+		],
+		"Delete": [
+			{
+				"All": false,
+				"Comment": "Delete CpuPm",
+				"Enabled": false,
+				"OemTableId": {
+					"type": "Buffer",
+					"data": [
+						67,
+						112,
+						117,
+						80,
+						109,
+						0,
+						0,
+						0
+					]
+				},
+				"TableLength": 0,
+				"TableSignature": {
+					"type": "Buffer",
+					"data": [
+						83,
+						83,
+						68,
+						84
+					]
+				}
+			},
+			{
+				"All": false,
+				"Comment": "Delete Cpu0Ist",
+				"Enabled": false,
+				"OemTableId": {
+					"type": "Buffer",
+					"data": [
+						67,
+						112,
+						117,
+						48,
+						73,
+						115,
+						116,
+						0
+					]
+				},
+				"TableLength": 0,
+				"TableSignature": {
+					"type": "Buffer",
+					"data": [
+						83,
+						83,
+						68,
+						84
+					]
+				}
+			}
+		],
+		"Patch": [
+			{
+				"Base": "",
+				"BaseSkip": 0,
+				"Comment": "Replace one byte sequence with another",
+				"Count": 0,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						17,
+						34,
+						51,
+						68
+					]
+				},
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"OemTableId": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						68,
+						51,
+						34,
+						17
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0,
+				"TableLength": 0,
+				"TableSignature": {
+					"type": "Buffer",
+					"data": []
+				}
+			},
+			{
+				"Base": "\\_SB.PCI0.LPCB.HPET",
+				"BaseSkip": 0,
+				"Comment": "HPET _CRS to XCRS",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						95,
+						67,
+						82,
+						83
+					]
+				},
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"OemTableId": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						88,
+						67,
+						82,
+						83
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0,
+				"TableLength": 0,
+				"TableSignature": {
+					"type": "Buffer",
+					"data": []
+				}
+			}
+		],
+		"Quirks": {
+			"FadtEnableReset": false,
+			"NormalizeHeaders": false,
+			"RebaseRegions": false,
+			"ResetHwSig": false,
+			"ResetLogoStatus": true,
+			"SyncTableIds": false
+		}
+	},
+	"Booter": {
+		"MmioWhitelist": [
+			{
+				"Address": 4275159040,
+				"Comment": "Haswell: SB_RCBA is a 0x4 page memory region, containing SPI_BASE at 0x3800 (SPI_BASE_ADDRESS)",
+				"Enabled": false
+			},
+			{
+				"Address": 4278190080,
+				"Comment": "Generic: PCI root is a 0x1000 page memory region used by some types of firmware",
+				"Enabled": false
+			}
+		],
+		"Patch": [
+			{
+				"Arch": "Any",
+				"Comment": "macOS to hacOS",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						109,
+						97,
+						99,
+						79,
+						83
+					]
+				},
+				"Identifier": "Apple",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						104,
+						97,
+						99,
+						79,
+						83
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			}
+		],
+		"Quirks": {
+			"AllowRelocationBlock": false,
+			"AvoidRuntimeDefrag": true,
+			"DevirtualiseMmio": false,
+			"DisableSingleUser": false,
+			"DisableVariableWrite": false,
+			"DiscardHibernateMap": false,
+			"EnableSafeModeSlide": true,
+			"EnableWriteUnprotector": true,
+			"ForceBooterSignature": false,
+			"ForceExitBootServices": false,
+			"ProtectMemoryRegions": false,
+			"ProtectSecureBoot": false,
+			"ProtectUefiServices": false,
+			"ProvideCustomSlide": true,
+			"ProvideMaxSlide": 0,
+			"RebuildAppleMemoryMap": false,
+			"ResizeAppleGpuBars": -1,
+			"SetupVirtualMap": true,
+			"SignalAppleOS": false,
+			"SyncRuntimePermissions": false
+		}
+	},
+	"DeviceProperties": {
+		"Add": {
+			"PciRoot(0x0)/Pci(0x1b,0x0)": {
+				"layout-id": {
+					"type": "Buffer",
+					"data": [
+						1,
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"Delete": {}
+	},
+	"Kernel": {
+		"Add": [
+			{
+				"Arch": "Any",
+				"BundlePath": "Lilu.kext",
+				"Comment": "Patch engine",
+				"Enabled": true,
+				"ExecutablePath": "Contents/MacOS/Lilu",
+				"MaxKernel": "",
+				"MinKernel": "8.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "Any",
+				"BundlePath": "VirtualSMC.kext",
+				"Comment": "SMC emulator",
+				"Enabled": true,
+				"ExecutablePath": "Contents/MacOS/VirtualSMC",
+				"MaxKernel": "",
+				"MinKernel": "8.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "WhateverGreen.kext",
+				"Comment": "Video patches",
+				"Enabled": true,
+				"ExecutablePath": "Contents/MacOS/WhateverGreen",
+				"MaxKernel": "",
+				"MinKernel": "10.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "Any",
+				"BundlePath": "AppleALC.kext",
+				"Comment": "Audio patches",
+				"Enabled": true,
+				"ExecutablePath": "Contents/MacOS/AppleALC",
+				"MaxKernel": "",
+				"MinKernel": "8.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "IntelMausi.kext",
+				"Comment": "Intel Ethernet LAN",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/IntelMausi",
+				"MaxKernel": "",
+				"MinKernel": "13.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "Legacy_USB3.kext",
+				"Comment": "XHC ports configuration",
+				"Enabled": false,
+				"ExecutablePath": "",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "AppleMCEReporterDisabler.kext",
+				"Comment": "AppleMCEReporter disabler",
+				"Enabled": false,
+				"ExecutablePath": "",
+				"MaxKernel": "",
+				"MinKernel": "19.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "VoodooPS2Controller.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/VoodooPS2Controller",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/VoodooPS2Keyboard",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/VoodooPS2Mouse",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/VoodooPS2Trackpad",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "VoodooPS2Controller.kext/Contents/PlugIns/VoodooInput.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/VoodooInput",
+				"MaxKernel": "",
+				"MinKernel": "15.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "AirportBrcmFixup.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/AirportBrcmFixup",
+				"MaxKernel": "22.9.9",
+				"MinKernel": "12.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcm4360_Injector.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "",
+				"MaxKernel": "19.9.9",
+				"MinKernel": "12.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "",
+				"MaxKernel": "22.9.9",
+				"MinKernel": "17.0.0",
+				"PlistPath": "Contents/Info.plist"
+			},
+			{
+				"Arch": "x86_64",
+				"BundlePath": "NVMeFix.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/NVMeFix",
+				"MaxKernel": "22.9.9",
+				"MinKernel": "18.0.0",
+				"PlistPath": "Contents/Info.plist"
+			}
+		],
+		"Block": [
+			{
+				"Arch": "Any",
+				"Comment": "",
+				"Enabled": false,
+				"Identifier": "com.apple.driver.AppleTyMCEDriver",
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Strategy": "Disable"
+			}
+		],
+		"Emulate": {
+			"Cpuid1Data": {
+				"type": "Buffer",
+				"data": []
+			},
+			"Cpuid1Mask": {
+				"type": "Buffer",
+				"data": []
+			},
+			"DummyPowerManagement": false,
+			"MaxKernel": "",
+			"MinKernel": ""
+		},
+		"Force": [
+			{
+				"Arch": "Any",
+				"BundlePath": "System/Library/Extensions/IONetworkingFamily.kext",
+				"Comment": "",
+				"Enabled": false,
+				"ExecutablePath": "Contents/MacOS/IONetworkingFamily",
+				"Identifier": "com.apple.iokit.IONetworkingFamily",
+				"MaxKernel": "13.99.99",
+				"MinKernel": "",
+				"PlistPath": "Contents/Info.plist"
+			}
+		],
+		"Patch": [
+			{
+				"Arch": "Any",
+				"Base": "__ZN8AppleRTC18setupDateTimeAlarmEPK11RTCDateTime",
+				"Comment": "Disable RTC wake scheduling",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "com.apple.driver.AppleRTC",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "19.0.0",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						195
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "Any",
+				"Base": "_AcpiOsVprintf",
+				"Comment": "Disable ACPI logging",
+				"Count": 0,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "com.apple.driver.AppleACPIPlatform",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "18.5.0",
+				"MinKernel": "18.5.0",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						195
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "__ZN11BCM5701Enet14getAdapterInfoEv",
+				"Comment": "Broadcom BCM57785 patch",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						232,
+						0,
+						0,
+						255,
+						255,
+						102,
+						137,
+						131,
+						0,
+						5,
+						0,
+						0
+					]
+				},
+				"Identifier": "com.apple.iokit.AppleBCM5701Ethernet",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": [
+						255,
+						0,
+						0,
+						255,
+						255,
+						255,
+						255,
+						255,
+						255,
+						255,
+						255,
+						255
+					]
+				},
+				"MaxKernel": "19.9.9",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						184,
+						180,
+						22,
+						0,
+						0,
+						102,
+						137,
+						131,
+						0,
+						5,
+						0,
+						0
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_panic",
+				"Comment": "Send panic string to serial port",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "kernel",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						49,
+						246,
+						138,
+						15,
+						132,
+						201,
+						117,
+						4,
+						255,
+						198,
+						177,
+						10,
+						102,
+						186,
+						253,
+						3,
+						236,
+						168,
+						32,
+						116,
+						251,
+						102,
+						186,
+						248,
+						3,
+						136,
+						200,
+						238,
+						72,
+						255,
+						199,
+						133,
+						246,
+						116,
+						223,
+						235,
+						254
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_kernel_debug_string_early",
+				"Comment": "Send early prints to serial port",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "kernel",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						49,
+						246,
+						138,
+						15,
+						132,
+						201,
+						117,
+						4,
+						255,
+						198,
+						177,
+						10,
+						102,
+						186,
+						253,
+						3,
+						236,
+						168,
+						32,
+						116,
+						251,
+						102,
+						186,
+						248,
+						3,
+						136,
+						200,
+						238,
+						72,
+						255,
+						199,
+						133,
+						246,
+						116,
+						223,
+						195
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_disable_serial_output",
+				"Comment": "Enable early serial output on RELEASE kernel",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "kernel",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						0
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_vstart",
+				"Comment": "Print K and dead loop",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "kernel",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						177,
+						75,
+						102,
+						186,
+						253,
+						3,
+						236,
+						168,
+						32,
+						116,
+						251,
+						102,
+						186,
+						248,
+						3,
+						136,
+						200,
+						238,
+						177,
+						10,
+						102,
+						186,
+						253,
+						3,
+						236,
+						168,
+						32,
+						116,
+						251,
+						102,
+						186,
+						248,
+						3,
+						136,
+						200,
+						238,
+						235,
+						254
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_vstart",
+				"Comment": "Early reboot",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Identifier": "kernel",
+				"Limit": 0,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "",
+				"MinKernel": "",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						49,
+						192,
+						176,
+						6,
+						186,
+						249,
+						12,
+						0,
+						0,
+						238,
+						235,
+						254
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_early_random",
+				"Comment": "SurPlus v1 - PART 1 of 2 - Patch read_erandom (inlined in _early_random)",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						0,
+						116,
+						35,
+						72,
+						139
+					]
+				},
+				"Identifier": "kernel",
+				"Limit": 800,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "21.1.0",
+				"MinKernel": "20.4.0",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						0,
+						235,
+						35,
+						72,
+						139
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			},
+			{
+				"Arch": "x86_64",
+				"Base": "_register_and_init_prng",
+				"Comment": "SurPlus v1 - PART 2 of 2 - Patch register_and_init_prng",
+				"Count": 1,
+				"Enabled": false,
+				"Find": {
+					"type": "Buffer",
+					"data": [
+						186,
+						72,
+						1,
+						0,
+						0,
+						49,
+						246
+					]
+				},
+				"Identifier": "kernel",
+				"Limit": 256,
+				"Mask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"MaxKernel": "21.1.0",
+				"MinKernel": "20.4.0",
+				"Replace": {
+					"type": "Buffer",
+					"data": [
+						186,
+						72,
+						1,
+						0,
+						0,
+						235,
+						5
+					]
+				},
+				"ReplaceMask": {
+					"type": "Buffer",
+					"data": []
+				},
+				"Skip": 0
+			}
+		],
+		"Quirks": {
+			"AppleCpuPmCfgLock": false,
+			"AppleXcpmCfgLock": false,
+			"AppleXcpmExtraMsrs": false,
+			"AppleXcpmForceBoost": false,
+			"CustomPciSerialDevice": false,
+			"CustomSMBIOSGuid": false,
+			"DisableIoMapper": false,
+			"DisableIoMapperMapping": false,
+			"DisableLinkeditJettison": true,
+			"DisableRtcChecksum": false,
+			"ExtendBTFeatureFlags": false,
+			"ExternalDiskIcons": false,
+			"ForceAquantiaEthernet": false,
+			"ForceSecureBootScheme": false,
+			"IncreasePciBarSize": false,
+			"LapicKernelPanic": false,
+			"LegacyCommpage": false,
+			"PanicNoKextDump": false,
+			"PowerTimeoutKernelPanic": false,
+			"ProvideCurrentCpuInfo": false,
+			"SetApfsTrimTimeout": -1,
+			"ThirdPartyDrives": false,
+			"XhciPortLimit": false
+		},
+		"Scheme": {
+			"CustomKernel": false,
+			"FuzzyMatch": true,
+			"KernelArch": "Auto",
+			"KernelCache": "Auto"
+		}
+	},
+	"Misc": {
+		"BlessOverride": [],
+		"Boot": {
+			"ConsoleAttributes": 0,
+			"HibernateMode": "None",
+			"HibernateSkipsPicker": false,
+			"HideAuxiliary": true,
+			"LauncherOption": "Disabled",
+			"LauncherPath": "Default",
+			"PickerAttributes": 17,
+			"PickerAudioAssist": false,
+			"PickerMode": "Builtin",
+			"PickerVariant": "Auto",
+			"PollAppleHotKeys": false,
+			"ShowPicker": true,
+			"TakeoffDelay": 0,
+			"Timeout": 5
+		},
+		"Debug": {
+			"AppleDebug": false,
+			"ApplePanic": false,
+			"DisableWatchDog": false,
+			"DisplayDelay": 0,
+			"DisplayLevel": 2147483650,
+			"LogModules": "*",
+			"SysReport": false,
+			"Target": 3
+		},
+		"Entries": [
+			{
+				"Arguments": "",
+				"Auxiliary": false,
+				"Comment": "Not signed for security reasons",
+				"Enabled": false,
+				"Flavour": "Auto",
+				"Name": "CustomOS",
+				"Path": "PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)/NVMe(0x1,11-22-33-44-55-66-77-88)/HD(1,GPT,00000000-0000-0000-0000-000000000000,0x800,0x64000)/\\EFI\\BOOT\\BOOTX64.EFI",
+				"TextMode": false
+			}
+		],
+		"Security": {
+			"AllowSetDefault": false,
+			"ApECID": 0,
+			"AuthRestart": false,
+			"BlacklistAppleUpdate": true,
+			"DmgLoading": "Signed",
+			"EnablePassword": false,
+			"ExposeSensitiveData": 6,
+			"HaltLevel": 2147483648,
+			"PasswordHash": {
+				"type": "Buffer",
+				"data": []
+			},
+			"PasswordSalt": {
+				"type": "Buffer",
+				"data": []
+			},
+			"ScanPolicy": 17760515,
+			"SecureBootModel": "Default",
+			"Vault": "Secure"
+		},
+		"Serial": {
+			"Init": false,
+			"Override": false
+		},
+		"Tools": [
+			{
+				"Arguments": "",
+				"Auxiliary": true,
+				"Comment": "Not signed for security reasons",
+				"Enabled": false,
+				"Flavour": "OpenShell:UEFIShell:Shell",
+				"FullNvramAccess": false,
+				"Name": "UEFI Shell",
+				"Path": "OpenShell.efi",
+				"RealPath": false,
+				"TextMode": false
+			},
+			{
+				"Arguments": "",
+				"Auxiliary": true,
+				"Comment": "Memory testing utility",
+				"Enabled": false,
+				"Flavour": "MemTest",
+				"FullNvramAccess": false,
+				"Name": "memtest86",
+				"Path": "memtest86/BOOTX64.efi",
+				"RealPath": true,
+				"TextMode": false
+			},
+			{
+				"Arguments": "Shutdown",
+				"Auxiliary": true,
+				"Comment": "Perform shutdown",
+				"Enabled": false,
+				"Flavour": "Auto",
+				"FullNvramAccess": false,
+				"Name": "Shutdown",
+				"Path": "ResetSystem.efi",
+				"RealPath": false,
+				"TextMode": false
+			}
+		]
+	},
+	"NVRAM": {
+		"Add": {
+			"4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": {
+				"DefaultBackgroundColor": {
+					"type": "Buffer",
+					"data": [
+						0,
+						0,
+						0,
+						0
+					]
+				}
+			},
+			"4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": {
+				"rtc-blacklist": {
+					"type": "Buffer",
+					"data": []
+				}
+			},
+			"7C436110-AB2A-4BBB-A880-FE41995C9F82": {
+				"#INFO (prev-lang:kbd)": "en:252 (ABC), set 656e3a323532",
+				"ForceDisplayRotationInEFI": 0,
+				"SystemAudioVolume": {
+					"type": "Buffer",
+					"data": [
+						70
+					]
+				},
+				"boot-args": "-v keepsyms=1",
+				"csr-active-config": {
+					"type": "Buffer",
+					"data": [
+						0,
+						0,
+						0,
+						0
+					]
+				},
+				"prev-lang:kbd": {
+					"type": "Buffer",
+					"data": [
+						114,
+						117,
+						45,
+						82,
+						85,
+						58,
+						50,
+						53,
+						50
+					]
+				},
+				"run-efi-updater": "No"
+			}
+		},
+		"Delete": {
+			"4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
+				"DefaultBackgroundColor"
+			],
+			"4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
+				"rtc-blacklist"
+			],
+			"7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+				"boot-args",
+				"ForceDisplayRotationInEFI"
+			]
+		},
+		"LegacyOverwrite": false,
+		"LegacySchema": {
+			"7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+				"EFILoginHiDPI",
+				"EFIBluetoothDelay",
+				"LocationServicesEnabled",
+				"SystemAudioVolume",
+				"SystemAudioVolumeDB",
+				"SystemAudioVolumeSaved",
+				"bluetoothActiveControllerInfo",
+				"bluetoothInternalControllerInfo",
+				"flagstate",
+				"fmm-computer-name",
+				"fmm-mobileme-token-FMM",
+				"fmm-mobileme-token-FMM-BridgeHasAccount",
+				"nvda_drv",
+				"prev-lang:kbd"
+			],
+			"8BE4DF61-93CA-11D2-AA0D-00E098032B8C": [
+				"Boot0080",
+				"Boot0081",
+				"Boot0082",
+				"BootNext",
+				"BootOrder"
+			]
+		},
+		"WriteFlash": true
+	},
+	"PlatformInfo": {
+		"Automatic": true,
+		"CustomMemory": false,
+		"Generic": {
+			"AdviseFeatures": false,
+			"MLB": "M0000000000000001",
+			"MaxBIOSVersion": false,
+			"ProcessorType": 0,
+			"ROM": {
+				"type": "Buffer",
+				"data": [
+					17,
+					34,
+					51,
+					68,
+					85,
+					102
+				]
+			},
+			"SpoofVendor": true,
+			"SystemMemoryStatus": "Auto",
+			"SystemProductName": "iMac19,1",
+			"SystemSerialNumber": "W00000000001",
+			"SystemUUID": "00000000-0000-0000-0000-000000000000"
+		},
+		"UpdateDataHub": true,
+		"UpdateNVRAM": true,
+		"UpdateSMBIOS": true,
+		"UpdateSMBIOSMode": "Create",
+		"UseRawUuidEncoding": false
+	},
+	"UEFI": {
+		"APFS": {
+			"EnableJumpstart": true,
+			"GlobalConnect": false,
+			"HideVerbose": true,
+			"JumpstartHotPlug": false,
+			"MinDate": 0,
+			"MinVersion": 0
+		},
+		"AppleInput": {
+			"AppleEvent": "Builtin",
+			"CustomDelays": false,
+			"GraphicsInputMirroring": true,
+			"KeyInitialDelay": 50,
+			"KeySubsequentDelay": 5,
+			"PointerDwellClickTimeout": 0,
+			"PointerDwellDoubleClickTimeout": 0,
+			"PointerDwellRadius": 0,
+			"PointerPollMask": -1,
+			"PointerPollMax": 80,
+			"PointerPollMin": 10,
+			"PointerSpeedDiv": 1,
+			"PointerSpeedMul": 1
+		},
+		"Audio": {
+			"AudioCodec": 0,
+			"AudioDevice": "PciRoot(0x0)/Pci(0x1b,0x0)",
+			"AudioOutMask": 1,
+			"AudioSupport": false,
+			"DisconnectHda": false,
+			"MaximumGain": -15,
+			"MinimumAssistGain": -30,
+			"MinimumAudibleGain": -55,
+			"PlayChime": "Auto",
+			"ResetTrafficClass": false,
+			"SetupDelay": 0
+		},
+		"ConnectDrivers": true,
+		"Drivers": [
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": true,
+				"Path": "OpenVariableRuntimeDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": true,
+				"LoadEarly": false,
+				"Path": "OpenRuntime.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "HFS+ Driver",
+				"Enabled": true,
+				"LoadEarly": false,
+				"Path": "HfsPlus.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "OpenCanopy.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "AudioDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "OpenPartitionDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "OpenUsbKbDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "UsbMouseDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Ps2KeyboardDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Ps2MouseDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "HiiDatabase.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "NvmExpressDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "XhciDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "ExFatDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "CrScreenshotDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Ext4Dxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "DpcDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "SnpDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "MnpDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "ArpDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Dhcp4Dxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Ip4Dxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "Udp4Dxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "TcpDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "DnsDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "HttpDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "HttpUtilitiesDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "HttpBootDxe.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "OpenLinuxBoot.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "ResetNvramEntry.efi"
+			},
+			{
+				"Arguments": "",
+				"Comment": "",
+				"Enabled": false,
+				"LoadEarly": false,
+				"Path": "ToggleSipEntry.efi"
+			}
+		],
+		"Input": {
+			"KeyFiltering": false,
+			"KeyForgetThreshold": 5,
+			"KeySupport": true,
+			"KeySupportMode": "Auto",
+			"KeySwap": false,
+			"PointerSupport": false,
+			"PointerSupportMode": "ASUS",
+			"TimerResolution": 50000
+		},
+		"Output": {
+			"ClearScreenOnModeSwitch": false,
+			"ConsoleFont": "",
+			"ConsoleMode": "",
+			"DirectGopRendering": false,
+			"ForceResolution": false,
+			"GopBurstMode": false,
+			"GopPassThrough": "Disabled",
+			"IgnoreTextInGraphics": false,
+			"InitialMode": "Auto",
+			"ProvideConsoleGop": true,
+			"ReconnectGraphicsOnConnect": false,
+			"ReconnectOnResChange": false,
+			"ReplaceTabWithSpace": false,
+			"Resolution": "Max",
+			"SanitiseClearScreen": false,
+			"TextRenderer": "BuiltinGraphics",
+			"UIScale": 0,
+			"UgaPassThrough": false
+		},
+		"ProtocolOverrides": {
+			"AppleAudio": false,
+			"AppleBootPolicy": false,
+			"AppleDebugLog": false,
+			"AppleEg2Info": false,
+			"AppleFramebufferInfo": false,
+			"AppleImageConversion": false,
+			"AppleImg4Verification": false,
+			"AppleKeyMap": false,
+			"AppleRtcRam": false,
+			"AppleSecureBoot": false,
+			"AppleSmcIo": false,
+			"AppleUserInterfaceTheme": false,
+			"DataHub": false,
+			"DeviceProperties": false,
+			"FirmwareVolume": true,
+			"HashServices": false,
+			"OSInfo": false,
+			"PciIo": false,
+			"UnicodeCollation": false
+		},
+		"Quirks": {
+			"ActivateHpetSupport": false,
+			"DisableSecurityPolicy": false,
+			"EnableVectorAcceleration": true,
+			"EnableVmx": false,
+			"ExitBootServicesDelay": 0,
+			"ForceOcWriteFlash": false,
+			"ForgeUefiSupport": false,
+			"IgnoreInvalidFlexRatio": false,
+			"ReleaseUsbOwnership": false,
+			"ReloadOptionRoms": false,
+			"RequestBootVarRouting": true,
+			"ResizeGpuBars": -1,
+			"ResizeUsePciRbIo": false,
+			"TscSyncTimeout": 0,
+			"UnblockFsConnect": false
+		},
+		"ReservedMemory": [
+			{
+				"Address": 268435456,
+				"Comment": "HD3000: IGPU memory corruption errata",
+				"Enabled": false,
+				"Size": 268435456,
+				"Type": "Reserved"
+			},
+			{
+				"Address": 569344,
+				"Comment": "Fix black screen on wake from hibernation for Lenovo Thinkpad T490",
+				"Enabled": false,
+				"Size": 4096,
+				"Type": "RuntimeCode"
+			}
+		]
+	}
+}
